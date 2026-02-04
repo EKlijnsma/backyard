@@ -73,17 +73,20 @@
         <div class="section-header">
           <h2>Eventinformatie</h2>
           <p>
-            Achtertuin Ultra is een backyard-style ultraloop met een gezellige basecamp. Denk aan eten, drinken, warmte, muziek en de nodige zelfspot.
+            Achtertuin Ultra is een backyard-style ultraloop met een gezellige basecamp. 
+            Denk aan eten, drinken, warmte, muziek en de nodige zelfspot.
+            Het evenement is bedoeld voor iedereen die zichzelf wil uitdagen,
+            of je nu een doorgewinterde ultraloper bent of een beginnende loper.
           </p>
         </div>
         <div class="card-grid">
           <article class="card">
             <h3>Waar</h3>
-            <p>Exacte locatie volgt.</p>
+            <p>Ergens in de Achterhoek. Exacte locatie volgt.</p>
           </article>
           <article class="card">
             <h3>Wanneer</h3>
-            <p>Zaterdag 9 mei 10:00 t/m zondag 10 mei 10:00. Details volgen.</p>
+            <p>Zaterdag 9 mei om 10:00 start de eerste ronde. Zondag 10 mei om 9:00 start de laatste ronde.</p>
           </article>
           <article class="card">
             <h3>Waarom</h3>
@@ -95,15 +98,19 @@
       <section id="schedule" class="section alt">
         <div class="section-header">
           <h2>Hoe het werkt</h2>
-          <p>
-            Je schrijft je in voor rondes van 5 km of 2,5 km. 
-            Elke uur start je een ronde. Terug bij basecamp heb je de rest van het uur om te rusten en op te laden voordat de volgende ronde start.
-            Je probeert de 24 uur vol te maken om je gouden souvenir te verdienen.
-          </p>
+          <ul class="bullet-list">
+            <li>Je schrijft je in voor rondes van 5 km of 2,5 km.</li>
+            <li>Elk uur start je een ronde. Terug bij basecamp heb je de rest van het uur om te rusten en op te laden.</li>
+            <li>Loop je een ronde in 25 minuten? Dan heb je 35 minuten om te eten, drinken, omkleden, stretchen, slapen, etc.</li>
+            <li>Loop je een ronde in 50 minuten? Dan heb je 10 minuten om te herstellen voordat je weer aan de start staat.</li>
+            <li>Anders dan bij een 'echte' backyard ultra die doorgaat tot er 1 deelnemer over is stopt dit event na 24 uur.</li>
+            <li>Het doel is natuurlijk alle 24 rondes te volbrengen.</li>
+          </ul>
+          <p>Verdere details ten aanzien van het parcours, regels en faciliteiten volgen later.</p>
         </div>
         <div class="pill-grid">
           <div class="pill">Start elk uur op het uur</div>
-          <div class="pill">Rust tussen de rondes</div>
+          <div class="pill">Rust uit tussen de rondes</div>
           <div class="pill">Neem supporters mee</div>
           <div class="pill">Maak de 24 uur vol</div>
         </div>
@@ -147,6 +154,26 @@
               Alles wat je nodig hebt om de 24 uur vol te maken. Denk aan licht, warme kleding, regenkleding, droge kleding, voeding, etc. Een gedetailleerde lijst met aanbevolen items volgt.
             </p>
           </article>
+          <article class="card">
+            <h3>Is er eten en drinken aanwezig?</h3>
+            <p>
+              We zorgen voor de basis. Dat wil zeggen water en wat snacks bij basecamp. Voor persoonlijke voorkeuren en specifieke voeding neem je zelf iets mee.
+            </p>
+          </article>
+          <article class="card">
+            <h3>Waar kan ik slapen of rusten?</h3>
+            <p>
+              Er is ruimte genoeg om even te liggen of te zitten bij basecamp. Neem wel zelf een stoel, matje, dekentje etc. mee voor je rustmomenten.
+            </p>
+          </article>
+          <article class="card">
+            <h3>Wat als ik eerder wil stoppen?</h3>
+            <p>
+              Je mag na elke ronde stoppen. Maar het is natuurlijk te makkelijk om vanuit je luie stoel op te geven. 
+              Daarom geldt: stoppen mag tijdens of direct na voltooing van een ronde.
+              Geef je niet aan dat je stopt, dan start je de volgende ronde gewoon weer.
+            </p>
+          </article>
         </div>
       </section>
 
@@ -185,6 +212,13 @@
             <label>
               Doel (uren of rondes)
               <input type="text" name="goal" required placeholder="24u/18u/etc" />
+            </label>
+            <label>
+              Afstand?
+              <select name="distance" required>
+                <option value="5">5 km (standaard)</option>
+                <option value="2.5">2,5 km</option>
+              </select>
             </label>
             <label>
               Verwachte je supporters/crew?
