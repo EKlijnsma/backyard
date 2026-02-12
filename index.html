@@ -182,22 +182,81 @@
         <div class="section-header">
           <h2>Inschrijven</h2>
           <p>
-            Vul het formulier in om een e-mail met je gegevens te openen. Je kunt alles
-            nog controleren voordat je verzendt. Geef a.u.b. alle info op zodat de organisatie weet waar ze aan toe is.
+            Vul het formulier in en klik daarna op "Open Google Form". Je gegevens worden dan
+            automatisch ingevuld. Geef a.u.b. alle info op zodat de organisatie weet waar ze aan toe is.
             Inschrijfgeld is 30 euro. We houden het informeel, maar we regelen o.a. drinken, startnummers,
             medailles en partytenten, dus helemaal gratis kan niet.
           </p>
         </div>
-        <div class="form-embed">
-          <iframe
-            class="form-embed-frame"
-            src="https://docs.google.com/forms/d/e/1FAIpQLSeKPP9ncG38lDMVBHHVuccXY132fAQhCEambGXnK1bIMbd2tg/viewform?embedded=true"
-            title="Achtertuin Ultra inschrijfformulier"
-            loading="lazy"
-          >
-            Laden…
-          </iframe>
-        </div>
+        <form class="form" id="signup-form">
+          <div class="field-row">
+            <label>
+              Naam
+              <input type="text" name="name" required placeholder="Je naam" />
+            </label>
+            <label>
+              E-mailadres
+              <input type="email" name="email" required placeholder="jij@example.com" />
+            </label>
+          </div>
+          <div class="field-row">
+            <label>
+              Telefoonnummer
+              <input type="tel" name="phone" required placeholder="06 12345678" />
+            </label>
+            <label>
+              Afstand
+              <select name="distance" required>
+                <option value="" disabled selected>Kies een afstand</option>
+                <option value="5km (standaard)">5km (standaard)</option>
+                <option value="2,5km">2,5km</option>
+              </select>
+            </label>
+          </div>
+          <div class="field-row">
+            <label>
+              Doel (aantal ronden/uren)
+              <select name="goal" required>
+                <option value="" disabled selected>Kies je doel</option>
+                <option value="Fun Run (24u)">Fun Run (24u)</option>
+                <option value="Kids Run (16u)">Kids Run (16u)</option>
+                <option value="Warm up (10u)">Warm up (10u)</option>
+                <option value="Geen douche nodig (minder dan 10u 🤔)">Geen douche nodig (minder dan 10u 🤔)</option>
+              </select>
+            </label>
+            <label>
+              Verwacht je supporters/crew?
+              <select name="crew" required>
+                <option value="" disabled selected>Kies een optie</option>
+                <option value="Ja 3 of meer">Ja 3 of meer</option>
+                <option value="Ja 1 of 2">Ja 1 of 2</option>
+                <option value="Nee">Nee</option>
+              </select>
+            </label>
+          </div>
+          <div class="field-row">
+            <label>
+              Naam noodcontact
+              <input type="text" name="emergency_name" required placeholder="Naam" />
+            </label>
+            <label>
+              Telefoonnummer noodcontact
+              <input type="tel" name="emergency_phone" required placeholder="06 87654321" />
+            </label>
+          </div>
+          <label class="checkbox">
+            <input type="checkbox" name="terms" required />
+            Deelname kost €30,-. Na inschrijving ontvang je een betaalverzoek. Je bent pas definitief ingeschreven
+            als de betaling is ontvangen en je plek wordt niet gereserveerd in de tussentijd.
+          </label>
+          <label>
+            Heb je opmerkingen of vragen of wil je nog dingen kwijt?
+            <textarea name="notes" rows="4" placeholder="Opmerkingen of vragen"></textarea>
+          </label>
+          <div class="form-actions">
+            <button class="btn" type="button" id="open-google-form">Open Google Form</button>
+          </div>
+        </form>
       </section>
 
       <section id="questions" class="section alt">
@@ -207,16 +266,23 @@
             Stuur ons een kort bericht. We antwoorden aan het e-mailadres dat je invult.
           </p>
         </div>
-        <div class="form-embed">
-          <iframe
-            class="form-embed-frame"
-            src="https://docs.google.com/forms/d/e/1FAIpQLSeKPP9ncG38lDMVBHHVuccXY132fAQhCEambGXnK1bIMbd2tg/viewform?embedded=true"
-            title="Achtertuin Ultra vragenformulier"
-            loading="lazy"
-          >
-            Laden…
-          </iframe>
-        </div>
+        <form class="form" id="question-form">
+          <div class="field-row">
+            <label>
+              Naam
+              <input type="text" name="name" required placeholder="Je naam" />
+            </label>
+            <label>
+              Email
+              <input type="email" name="email" required placeholder="jij@example.com" />
+            </label>
+          </div>
+          <label>
+            Vraag
+            <textarea name="question" rows="5" required placeholder="Wat wil je weten?"></textarea>
+          </label>
+          <button class="btn" type="submit">Open vragenmail</button>
+        </form>
       </section>
     </main>
 

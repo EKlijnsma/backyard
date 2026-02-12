@@ -279,21 +279,18 @@ a {
   margin-right: auto;
 }
 
-.form-embed {
-  max-width: 900px;
-  margin-left: auto;
-  margin-right: auto;
-  border-radius: 20px;
-  overflow: hidden;
-  box-shadow: var(--shadow);
-  background: rgba(255, 255, 255, 0.85);
+.form-actions {
+  display: flex;
+  justify-content: flex-start;
 }
 
-.form-embed-frame {
-  width: 100%;
-  min-height: 1200px;
-  border: 0;
-  display: block;
+.checkbox {
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.checkbox input {
+  margin-top: 4px;
 }
 
 .field-row {
