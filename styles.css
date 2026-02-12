@@ -284,13 +284,22 @@ a {
   justify-content: flex-start;
 }
 
+.form-note {
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  border: 0;
+  line-height: 1.6;
+}
+
 .checkbox {
-  align-items: flex-start;
-  gap: 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
 }
 
 .checkbox input {
-  margin-top: 4px;
+  margin-top: 0;
 }
 
 .field-row {
