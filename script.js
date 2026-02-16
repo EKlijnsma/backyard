@@ -29,7 +29,9 @@ function handleQuestion(event) {
   window.location.href = mailto;
 }
 
-questionForm.addEventListener("submit", handleQuestion);
+if (questionForm) {
+  questionForm.addEventListener("submit", handleQuestion);
+}
 
 function buildGoogleFormUrl() {
   const data = new FormData(signupForm);
@@ -50,10 +52,12 @@ function buildGoogleFormUrl() {
   return `${base}&${params.toString()}`;
 }
 
-googleFormButton.addEventListener("click", () => {
-  if (!signupForm.reportValidity()) {
-    return;
-  }
-  const url = buildGoogleFormUrl();
-  window.open(url, "_blank", "noopener");
-});
+if (googleFormButton && signupForm) {
+  googleFormButton.addEventListener("click", () => {
+    if (!signupForm.reportValidity()) {
+      return;
+    }
+    const url = buildGoogleFormUrl();
+    window.open(url, "_blank", "noopener");
+  });
+}
