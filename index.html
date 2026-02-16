@@ -256,7 +256,7 @@
         <div class="section-header">
           <h2>Stel een vraag</h2>
           <p>
-            Stuur ons een kort bericht. We antwoorden aan het e-mailadres dat je invult.
+            Vul je vraag in en klik op "Open Google Form". Je gegevens worden dan automatisch ingevuld.
           </p>
         </div>
         <form class="form" id="question-form">
@@ -274,7 +274,9 @@
             Vraag
             <textarea name="question" rows="5" required placeholder="Wat wil je weten?"></textarea>
           </label>
-          <button class="btn" type="submit">Open vragenmail</button>
+          <div class="form-actions">
+            <button class="btn" type="button" id="open-google-question">Open Google Form</button>
+          </div>
         </form>
       </section>
     </main>

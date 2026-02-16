@@ -1,37 +1,9 @@
-const EMAIL_TO = "achtertuin.ultra@gmail.com";
-
 const signupForm = document.getElementById("signup-form");
 const questionForm = document.getElementById("question-form");
 const googleFormButton = document.getElementById("open-google-form");
+const googleQuestionButton = document.getElementById("open-google-question");
 
-function buildMailto({ subject, lines }) {
-  const body = encodeURIComponent(lines.join("\n"));
-  const encodedSubject = encodeURIComponent(subject);
-  return `mailto:${EMAIL_TO}?subject=${encodedSubject}&body=${body}`;
-}
-
-function handleQuestion(event) {
-  event.preventDefault();
-  const data = new FormData(event.target);
-  const lines = [
-    "Vraag - Achtertuin Ultra",
-    "",
-    `Naam: ${data.get("name")}`,
-    `Email: ${data.get("email")}`,
-    "",
-    "Vraag:",
-    data.get("question"),
-  ];
-  const mailto = buildMailto({
-    subject: "Achtertuin Ultra Vraag",
-    lines,
-  });
-  window.location.href = mailto;
-}
-
-if (questionForm) {
-  questionForm.addEventListener("submit", handleQuestion);
-}
+// Question form now opens a Google Form instead of mailto.
 
 function buildGoogleFormUrl() {
   const data = new FormData(signupForm);
@@ -58,6 +30,28 @@ if (googleFormButton && signupForm) {
       return;
     }
     const url = buildGoogleFormUrl();
+    window.open(url, "_blank", "noopener");
+  });
+}
+
+function buildGoogleQuestionUrl() {
+  const data = new FormData(questionForm);
+  const base =
+    "https://docs.google.com/forms/d/e/1FAIpQLSckzBhiKhJdEEZTL9cTp57QW2KSA93FETKEgkXs8v1OqHa4RA/viewform?usp=pp_url";
+  const params = new URLSearchParams({
+    "entry.400830538": data.get("name") || "",
+    "entry.143882926": data.get("email") || "",
+    "entry.1297399281": data.get("question") || "",
+  });
+  return `${base}&${params.toString()}`;
+}
+
+if (googleQuestionButton && questionForm) {
+  googleQuestionButton.addEventListener("click", () => {
+    if (!questionForm.reportValidity()) {
+      return;
+    }
+    const url = buildGoogleQuestionUrl();
     window.open(url, "_blank", "noopener");
   });
 }
