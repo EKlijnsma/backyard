@@ -3,6 +3,8 @@ const signupForm = document.getElementById('signup-form');
 const questionForm = document.getElementById('question-form');
 const googleFormButton = document.getElementById('open-google-form');
 const googleQuestionButton = document.getElementById('open-google-question');
+const hamburgerButton = document.querySelector('.hamburger');
+const navLinks = document.getElementById('nav-links');
 
 function updateCountdown() {
   const diff = Math.max(0, eventDate - new Date());
@@ -73,5 +75,34 @@ if (googleQuestionButton && questionForm) {
       return;
     }
     window.open(buildGoogleQuestionUrl(), '_blank', 'noopener');
+  });
+}
+
+if (hamburgerButton && navLinks) {
+  const setMenuState = (open) => {
+    document.body.classList.toggle('nav-open', open);
+    hamburgerButton.setAttribute('aria-expanded', open ? 'true' : 'false');
+    hamburgerButton.setAttribute('aria-label', open ? 'Sluit menu' : 'Open menu');
+  };
+
+  hamburgerButton.addEventListener('click', () => {
+    const isOpen = document.body.classList.contains('nav-open');
+    setMenuState(!isOpen);
+  });
+
+  navLinks.querySelectorAll('a').forEach((link) => {
+    link.addEventListener('click', () => setMenuState(false));
+  });
+
+  window.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') {
+      setMenuState(false);
+    }
+  });
+
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 768) {
+      setMenuState(false);
+    }
   });
 }

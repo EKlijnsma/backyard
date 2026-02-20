@@ -41,6 +41,16 @@ nav {
 .nav-links { display: flex; gap: 2.5rem; list-style: none; }
 .nav-links a { color: var(--muted); text-decoration: none; font-family: 'IBM Plex Mono', monospace; font-size: 0.68rem; letter-spacing: 2px; text-transform: uppercase; transition: color 0.2s; }
 .nav-links a:hover { color: var(--dark); }
+.hamburger {
+  display: none; flex-direction: column; gap: 6px;
+  width: 36px; height: 30px; padding: 0;
+  border: none; background: transparent; cursor: pointer;
+}
+.hamburger span {
+  height: 2px; width: 100%;
+  background: var(--dark);
+  transition: transform 0.25s ease, opacity 0.2s ease;
+}
 
 /* HERO */
 #hero {
@@ -181,7 +191,22 @@ footer em { color: var(--orange); font-style: italic; }
 
 @media (max-width: 768px) {
   nav { padding: 1rem 1.5rem; }
-  .nav-links { display: none; }
+  .hamburger { display: flex; }
+  .nav-links {
+    position: absolute; top: 100%; left: 0; right: 0;
+    flex-direction: column; gap: 1.25rem;
+    padding: 1.2rem 1.5rem 1.5rem;
+    background: rgba(245,237,224,0.98);
+    border-bottom: 1px solid var(--border);
+    opacity: 0; max-height: 0; overflow: hidden;
+    pointer-events: none; transition: opacity 0.25s ease, max-height 0.3s ease;
+  }
+  body.nav-open .nav-links {
+    opacity: 1; max-height: 60vh; pointer-events: auto;
+  }
+  body.nav-open .hamburger span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+  body.nav-open .hamburger span:nth-child(2) { opacity: 0; }
+  body.nav-open .hamburger span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
   .what-grid, .register-wrap, .contact-grid { grid-template-columns: 1fr; gap: 2.5rem; }
   .form-row { grid-template-columns: 1fr; }
   .countdown { gap: 0.7rem; }
