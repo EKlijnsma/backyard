@@ -164,7 +164,7 @@ textarea { resize: vertical; min-height: 100px; }
 
 /* FOOTER */
 footer { text-align: center; padding: 4rem 2rem; border-top: 2px solid var(--border); background: var(--dark); }
-.footer-img { width: 120px; margin-bottom: 1.2rem; opacity: 0.92; filter: brightness(0) invert(1) sepia(1) saturate(2) hue-rotate(340deg); }
+.footer-img { width: 120px; margin-bottom: 1.2rem; opacity: 0.92; filter: saturate(1.1) brightness(0.95); }
 .footer-tagline { font-family: 'IBM Plex Mono', monospace; font-size: 0.75rem; letter-spacing: 3px; color: var(--orange); text-transform: uppercase; margin-bottom: 0.8rem; }
 footer p { color: rgba(245,237,224,0.35); font-size: 0.72rem; font-family: 'IBM Plex Mono', monospace; line-height: 1.8; }
 footer em { color: var(--orange); font-style: italic; }
