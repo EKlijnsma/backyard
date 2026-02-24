@@ -158,39 +158,39 @@
     <h2>Jouw Twijfels,<br><em>Terecht?</em></h2>
     <div class="divider"></div>
     <div class="faq-list">
-      <div class="faq-item" onclick="toggleFaq(this)">
+      <div class="faq-item">
         <div class="faq-q">Waar wordt dit event gehouden? <span>+</span></div>
         <div class="faq-a">We hebben een locatie in Winterswijk op het oog, vlakbij recreatieplas <em>Het Hilgeloo.</em> Details over de locatie, parkeren, etc. volgen later.</div>
       </div>
-      <div class="faq-item" onclick="toggleFaq(this)">
+      <div class="faq-item">
         <div class="faq-q">Is er eten en drinken aanwezig? <span>+</span></div>
         <div class="faq-a">Water en basissnacks zijn geregeld. De rest breng je zelf mee. <em>Jij bent de held van je eigen verzorgingspost.</em> Neem genoeg mee — je weet niet hoe je er om 3 uur 's nachts bij hangt.</div>
       </div>
-      <div class="faq-item" onclick="toggleFaq(this)">
+      <div class="faq-item">
         <div class="faq-q">Moet ik 5km rondes lopen? <span>+</span></div>
         <div class="faq-a">Als je na verloop van tijd de 5km ronde niet meer kunt opbrengen, dan kun je overstappen op de 2,5km ronde. Bedenk wel dat je dan de rest van het event de 2,5km ronde blijft doen. Voor degenen die willen wandelen of 5km gewoon niet haalbaar achten is er de mogelijkheid om direct voor de 2,5km in te schrijven. <em>Bij twijfel: ga voor de 5.</em> Overstappen kan altijd nog.</div>
       </div>
-      <div class="faq-item" onclick="toggleFaq(this)">
+      <div class="faq-item">
         <div class="faq-q">Mag ik de 24 rondjes ook in minder tijd lopen? <span>+</span></div>
         <div class="faq-a">Nee dat mag niet. Het doel is niet 24 rondjes in zo kort mogelijke tijd. Ook niet zoveel mogelijk rondjes in 24 uur. Elke ronde start op het hele uur. Het element van snelheid is er bewust uitgehaald. Omarm de rust tussendoor.</div>
       </div>
-      <div class="faq-item" onclick="toggleFaq(this)">
+      <div class="faq-item">
         <div class="faq-q">Wat als ik wil stoppen? <span>+</span></div>
         <div class="faq-a">Dan stop je gewoon. Met een beetje schaamte, maar de gezellige soort. We staan op gepaste wijze even stil bij het ter ziele gaan van je doorzettingsvermogen. Daarna mag je vanuit je stoel genieten van de ellende van anderen.</div>
       </div>
-      <div class="faq-item" onclick="toggleFaq(this)">
+      <div class="faq-item">
         <div class="faq-q">Welk niveau heb ik nodig? <span>+</span></div>
         <div class="faq-a">Als je 5 of 2,5 kunt lopen — of wandelen — kun je meedoen. Geen vereisten, geen drempels. Alleen rondjes. Eindeloze, prachtige, en op termijn vreselijke rondjes.</div>
       </div>
-      <div class="faq-item" onclick="toggleFaq(this)">
+      <div class="faq-item">
         <div class="faq-q">Kan ik slapen tijdens het evenement? <span>+</span></div>
         <div class="faq-a">Ja. Breng een stretcher of luchtbed mee, dut weg in je stoel, lig even in het gras. Maar vergeet niet op het hele uur weer klaar te staan, als het volgende rondje op je wacht. <em>Het wacht niet voor altijd.</em></div>
       </div>
-      <div class="faq-item" onclick="toggleFaq(this)">
+      <div class="faq-item">
         <div class="faq-q">Mag ik support meenemen? <span>+</span></div>
         <div class="faq-a">Absoluut, hoe meer zielen hoe meer vreugd! Wel is het verzoek om hen niet mee te laten lopen op het parcours. Als ze dat graag willen mogen ze zich zelf natuurlijk ook inschrijven.</div>
       </div>
-      <div class="faq-item" onclick="toggleFaq(this)">
+      <div class="faq-item">
         <div class="faq-q">Is dit een wedstrijd? Wie wint er? <span>+</span></div>
         <div class="faq-a">Als het al een wedstrijd is dan strijd je voornamelijk <em>tegen jezelf</em>. We houden rondes bij en vieren mijlpalen, maar er is geen klassering of winnaar.</div>
       </div>
@@ -271,7 +271,7 @@
           </div>
         </div>
         <div class="form-group">
-          <label style="text-transform:none; letter-spacing:0;">Deelname kost €30,-. Na inschrijving ontvang je een betaalverzoek. Je bent pas definitief ingeschreven als de betaling is ontvangen en je plek wordt niet gereserveerd in de tussentijd.</label>
+          <label class="legal-label">Deelname kost €30,-. Na inschrijving ontvang je een betaalverzoek. Je bent pas definitief ingeschreven als de betaling is ontvangen en je plek wordt niet gereserveerd in de tussentijd.</label>
           <div class="checkbox-row">
             <input type="checkbox" name="terms" required>
             <span>Ik ga akkoord met het bovenstaande</span>
@@ -281,7 +281,7 @@
           <label>Heb je opmerkingen of vragen of wil je nog dingen kwijt?</label>
           <textarea name="notes" placeholder="Opmerkingen of vragen"></textarea>
         </div>
-        <button type="button" class="btn btn-primary" id="open-google-form" style="width:100%;margin-top:0.5rem">Open Google Form</button>
+        <button type="button" class="btn btn-primary btn-full btn-with-top-space" id="open-google-form">Open Google Form</button>
       </form>
     </div>
   </div>
@@ -316,9 +316,9 @@
         </div>
         <div class="form-group">
           <label>Bericht</label>
-          <textarea name="question" placeholder="Stel gerust je vraag. We hebben al het nodige gehoord." required style="min-height:140px"></textarea>
+          <textarea class="question-textarea" name="question" placeholder="Stel gerust je vraag. We hebben al het nodige gehoord." required></textarea>
         </div>
-        <button type="button" class="btn btn-primary" id="open-google-question" style="width:100%">Open Google Form</button>
+        <button type="button" class="btn btn-primary btn-full" id="open-google-question">Open Google Form</button>
       </form>
     </div>
   </div>
@@ -329,10 +329,8 @@
   <img class="footer-img" src="image.png" alt="Achtertuin Ultra">
   <div class="footer-tagline">Run. Rest. Repeat. Regret.</div>
   <p>9 mei 2026 · 24 uur · Winterswijk · <em>AU2026</em></p>
-  <p style="margin-top:0.8rem; font-size:0.68rem;">© 2026 Achtertuin Ultra · Want waarom niet?</p>
+  <p class="footer-meta">© 2026 Achtertuin Ultra · Want waarom niet?</p>
 </footer>
-
-<div class="toast" id="toast"></div>
 
 <script src="script.js"></script>
 <!-- Cloudflare Web Analytics -->

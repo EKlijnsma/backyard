@@ -1,10 +1,11 @@
-const eventDate = new Date('2026-05-09T10:00:00');
+const eventDate = new Date('2026-05-09T10:00:00+02:00');
 const signupForm = document.getElementById('signup-form');
 const questionForm = document.getElementById('question-form');
 const googleFormButton = document.getElementById('open-google-form');
 const googleQuestionButton = document.getElementById('open-google-question');
 const hamburgerButton = document.querySelector('.hamburger');
 const navLinks = document.getElementById('nav-links');
+const faqItems = document.querySelectorAll('.faq-item');
 
 function updateCountdown() {
   const diff = Math.max(0, eventDate - new Date());
@@ -21,13 +22,30 @@ function updateCountdown() {
 updateCountdown();
 setInterval(updateCountdown, 1000);
 
-function toggleFaq(el) {
-  const open = el.classList.contains('open');
-  document.querySelectorAll('.faq-item').forEach((i) => i.classList.remove('open'));
+function toggleFaq(item) {
+  const open = item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach((i) => {
+    i.classList.remove('open');
+    i.setAttribute('aria-expanded', 'false');
+  });
   if (!open) {
-    el.classList.add('open');
+    item.classList.add('open');
+    item.setAttribute('aria-expanded', 'true');
   }
 }
+
+faqItems.forEach((item) => {
+  item.setAttribute('role', 'button');
+  item.setAttribute('tabindex', '0');
+  item.setAttribute('aria-expanded', 'false');
+  item.addEventListener('click', () => toggleFaq(item));
+  item.addEventListener('keydown', (event) => {
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault();
+      toggleFaq(item);
+    }
+  });
+});
 
 function buildGoogleFormUrl() {
   const data = new FormData(signupForm);
