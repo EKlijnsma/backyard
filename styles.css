@@ -135,6 +135,15 @@ nav {
   filter: saturate(1.1);
 }
 /* COUNTDOWN */
+.countdown-label {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 3px;
+  color: var(--orange);
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
 .countdown { display: flex; gap: 1rem; margin-bottom: 2.8rem; position: relative; }
 .cd-unit { display: flex; flex-direction: column; align-items: center; border: 1px solid var(--border); border-radius: 3px; padding: 0.9rem 1.2rem; min-width: 66px; background: rgba(255,255,255,0.5); }
 .cd-num { font-family: 'Barlow Condensed', sans-serif; font-size: 1.9rem; color: var(--dark); line-height: 1; font-weight: 700; }
