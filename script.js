@@ -13,14 +13,25 @@ function updateCountdown() {
   const h = Math.floor((diff % 86400000) / 3600000);
   const m = Math.floor((diff % 3600000) / 60000);
   const s = Math.floor((diff % 60000) / 1000);
-  document.getElementById('cd-days').textContent = String(d).padStart(3, '0');
-  document.getElementById('cd-hours').textContent = String(h).padStart(2, '0');
-  document.getElementById('cd-mins').textContent = String(m).padStart(2, '0');
-  document.getElementById('cd-secs').textContent = String(s).padStart(2, '0');
+  const days = document.getElementById('cd-days');
+  const hours = document.getElementById('cd-hours');
+  const mins = document.getElementById('cd-mins');
+  const secs = document.getElementById('cd-secs');
+
+  if (!days || !hours || !mins || !secs) {
+    return;
+  }
+
+  days.textContent = String(d).padStart(3, '0');
+  hours.textContent = String(h).padStart(2, '0');
+  mins.textContent = String(m).padStart(2, '0');
+  secs.textContent = String(s).padStart(2, '0');
 }
 
-updateCountdown();
-setInterval(updateCountdown, 1000);
+if (document.getElementById('cd-days')) {
+  updateCountdown();
+  setInterval(updateCountdown, 1000);
+}
 
 function toggleFaq(item) {
   const open = item.classList.contains('open');

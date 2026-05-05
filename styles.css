@@ -45,6 +45,7 @@ nav {
   border-bottom: 1px solid var(--border);
 }
 .logo { display: flex; flex-direction: column; line-height: 1; }
+.logo-link { text-decoration: none; }
 .logo-top { font-family: 'IBM Plex Mono', monospace; font-size: 0.6rem; letter-spacing: 4px; text-transform: uppercase; color: var(--red); }
 .logo-main { font-family: 'Barlow Condensed', sans-serif; font-size: 1.4rem; font-weight: 900; color: var(--dark); letter-spacing: 2px; text-transform: uppercase; }
 .logo-main span { color: var(--red); }
@@ -282,6 +283,142 @@ footer em { color: var(--orange); font-style: italic; }
   .countdown { gap: 0.7rem; }
   .cd-unit { padding: 0.8rem 0.9rem; min-width: 60px; }
   .hero-availability { margin: 1rem 0 0.35rem; }
+}
+
+/* SHIRT PAGE */
+.shirt-page main {
+  position: relative;
+  z-index: 1;
+}
+
+.shirt-section {
+  background: var(--bg);
+}
+
+.shirt-section-first {
+  padding-top: 8rem;
+}
+
+.shirt-section-alt {
+  background: var(--bg2);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.shirt-intro,
+.shirt-order-panel p {
+  max-width: 760px;
+  color: var(--muted);
+  line-height: 1.75;
+  font-size: 1.05rem;
+  font-weight: 300;
+}
+
+.shirt-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 3rem;
+}
+
+.shirt-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  overflow: hidden;
+  transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+}
+
+.shirt-card:hover {
+  border-color: var(--orange);
+  box-shadow: 0 6px 24px rgba(42,31,20,0.08);
+  transform: translateY(-3px);
+}
+
+.shirt-card img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 908 / 1100;
+  object-fit: cover;
+  background: rgba(255,255,255,0.45);
+}
+
+.shirt-card h3 {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.72rem;
+  letter-spacing: 2px;
+  line-height: 1.35;
+  min-height: 3.2rem;
+  display: flex;
+  align-items: center;
+  color: var(--dark);
+  text-transform: uppercase;
+  padding: 0.85rem 0.9rem;
+  border-top: 1px solid var(--border);
+}
+
+.sizing-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 3rem;
+}
+
+.sizing-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 0.75rem;
+}
+
+.sizing-card img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 2px;
+  background: #ffffff;
+}
+
+.sizing-card figcaption {
+  margin-top: 0.7rem;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.72rem;
+  letter-spacing: 2px;
+  color: var(--dark);
+  text-transform: uppercase;
+}
+
+.shirt-order-panel {
+  background: rgba(237, 224, 206, 0.55);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 2rem;
+}
+
+.shirt-order-panel .btn {
+  margin-top: 1.5rem;
+}
+
+@media (max-width: 900px) {
+  .shirt-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .sizing-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .shirt-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .shirt-order-panel {
+    padding: 1.4rem;
+  }
 }
 
 /* LETTER PAGE */
