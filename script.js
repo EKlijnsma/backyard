@@ -3,6 +3,8 @@ const signupForm = document.getElementById('signup-form');
 const questionForm = document.getElementById('question-form');
 const googleFormButton = document.getElementById('open-google-form');
 const googleQuestionButton = document.getElementById('open-google-question');
+const shirtOrderForm = document.getElementById('shirt-order-form');
+const shirtGoogleFormButton = document.getElementById('open-shirt-google-form');
 const hamburgerButton = document.querySelector('.hamburger');
 const navLinks = document.getElementById('nav-links');
 const faqItems = document.querySelectorAll('.faq-item');
@@ -89,6 +91,23 @@ function buildGoogleQuestionUrl() {
   return `${base}&${params.toString()}`;
 }
 
+function buildShirtGoogleFormUrl() {
+  const data = new FormData(shirtOrderForm);
+  const base =
+    'https://docs.google.com/forms/d/e/1FAIpQLSdtNWEhJobv5iT03UiYxauWCCTAhB8uvUWd4J9mDieqDtI9rg/viewform?usp=pp_url';
+  const params = new URLSearchParams({
+    'entry.400830538': data.get('name') || '',
+    'entry.143882926': data.get('email') || '',
+    'entry.1297399281': data.get('street') || '',
+    'entry.1380445980': data.get('postcode_city') || '',
+    'entry.1034802175': data.get('model') || '',
+    'entry.213513514': data.get('size') || '',
+    'entry.1284577302': data.get('color') || '',
+    'entry.1540657583': data.get('terms') || '',
+  });
+  return `${base}&${params.toString()}`;
+}
+
 if (googleFormButton && signupForm) {
   googleFormButton.addEventListener('click', () => {
     if (!signupForm.reportValidity()) {
@@ -104,6 +123,25 @@ if (googleQuestionButton && questionForm) {
       return;
     }
     window.open(buildGoogleQuestionUrl(), '_blank', 'noopener');
+  });
+}
+
+if (shirtGoogleFormButton && shirtOrderForm) {
+  const updateShirtButtonState = () => {
+    shirtGoogleFormButton.disabled = !shirtOrderForm.checkValidity();
+  };
+
+  shirtOrderForm.addEventListener('input', updateShirtButtonState);
+  shirtOrderForm.addEventListener('change', updateShirtButtonState);
+  updateShirtButtonState();
+
+  shirtOrderForm.addEventListener('submit', (event) => {
+    event.preventDefault();
+    if (!shirtOrderForm.reportValidity()) {
+      updateShirtButtonState();
+      return;
+    }
+    window.open(buildShirtGoogleFormUrl(), '_blank', 'noopener');
   });
 }
 

@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AU2026 Shirt Bestellen | Achtertuin Ultra</title>
   <meta name="description" content="Kies je Achtertuin Ultra 2026 shirtkleur en bekijk de maattabellen voor heren en dames.">
+  <meta name="robots" content="noindex,nofollow">
   <link rel="stylesheet" href="styles.css">
   <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
@@ -113,7 +114,84 @@
           Geef je kleur, model en maat door via het formulier. 
           Na afloop van het evenement nemen we contact op met je om de bestelling te bevestigen en de betaling te regelen. 
         </p>
-        <a class="btn btn-primary" href="#google-form-url-toevoegen" target="_blank" rel="noopener">Open bestelformulier</a>
+        <form id="shirt-order-form" class="shirt-form">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="shirt-name">Naam</label>
+              <input id="shirt-name" name="name" type="text" autocomplete="name" required>
+            </div>
+            <div class="form-group">
+              <label for="shirt-email">E-mail</label>
+              <input id="shirt-email" name="email" type="email" autocomplete="email" required>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="shirt-street">Straat en huisnummer</label>
+              <input id="shirt-street" name="street" type="text" autocomplete="street-address" required>
+            </div>
+            <div class="form-group">
+              <label for="shirt-postcode-city">Postcode en plaats</label>
+              <input id="shirt-postcode-city" name="postcode_city" type="text" autocomplete="postal-code" required>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="shirt-model">Model</label>
+              <select id="shirt-model" name="model" required>
+                <option value="">Kies model</option>
+                <option value="Heren">Heren</option>
+                <option value="Dames">Dames</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="shirt-size">Maat</label>
+              <select id="shirt-size" name="size" required>
+                <option value="">Kies maat</option>
+                <option value="XS (alleen dames)">XS (alleen dames)</option>
+                <option value="S">S</option>
+                <option value="M">M</option>
+                <option value="L">L</option>
+                <option value="XL">XL</option>
+                <option value="XXL">XXL</option>
+                <option value="3XL (alleen heren)">3XL (alleen heren)</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="shirt-color">Kleur</label>
+            <select id="shirt-color" name="color" required>
+              <option value="">Kies kleur</option>
+              <option value="Zonnegeel">Zonnegeel</option>
+              <option value="Electric Green">Electric Green</option>
+              <option value="Wit">Wit</option>
+              <option value="Houtskoolgrijs">Houtskoolgrijs</option>
+              <option value="Koningsblauw">Koningsblauw</option>
+              <option value="Saffierblauw">Saffierblauw</option>
+              <option value="Marineblauw">Marineblauw</option>
+              <option value="Paars">Paars</option>
+            </select>
+          </div>
+
+          <div class="shirt-form-note">
+            <p>
+              In de week na afloop van het evenement zullen we alle bestellingen controleren en contact opnemen voor de bevestiging van kleur en maat en de betaling.
+            </p>
+            <p>
+              We gaan ervan uit dat iedereen die bestelt ook spoedig aan het betaalverzoek tegemoet komt zodat de daadwerkelijke bestelling niet te lang op zich laat wachten.
+            </p>
+          </div>
+
+          <label class="checkbox-row legal-label">
+            <input name="terms" type="checkbox" value="Ik ga akkoord met bovenstaande." required>
+            <span>Ik ga akkoord met bovenstaande.</span>
+          </label>
+
+          <button id="open-shirt-google-form" class="btn btn-primary" type="submit" disabled>Open Google Form</button>
+        </form>
       </div>
     </section>
   </main>
